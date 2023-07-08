@@ -1,7 +1,7 @@
 // tslint:disable:max-classes-per-file
 import MarkdownIt from 'markdown-it';
 import Token from 'markdown-it/lib/token';
-import {ComponentType, ReactNode} from 'react';
+import {ComponentType, ReactNode, PropsWithChildren} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 export function getUniqueID(): string;
@@ -81,7 +81,7 @@ export function stringToTokens(
 
 export function tokensToAST(tokens: ReadonlyArray<Token>): ASTNode[];
 
-export interface MarkdownProps {
+export interface MarkdownProps extends PropsWithChildren {
   rules?: RenderRules;
   style?: StyleSheet.NamedStyles<any>;
   renderer?: AstRenderer;
